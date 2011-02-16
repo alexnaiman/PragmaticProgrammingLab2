@@ -78,7 +78,9 @@ const App: () => React$Node = () => {
             marginBottom: 15,
             marginLeft: 15,
           }}>
-          <Text>{packageJson.version}</Text>
+          <Text>
+            {packageJson.version}-{packageJson.sha}
+          </Text>
         </SafeAreaView>
       </SafeAreaView>
     </View>
