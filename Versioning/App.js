@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -15,7 +16,7 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
-
+import packageJson from './package.json';
 import {
   Header,
   LearnMoreLinks,
@@ -25,8 +26,9 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 const App: () => React$Node = () => {
+  console.log(packageJson);
   return (
-    <>
+    <View>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <ScrollView
@@ -67,8 +69,19 @@ const App: () => React$Node = () => {
             <LearnMoreLinks />
           </View>
         </ScrollView>
+        <SafeAreaView
+          pointerEvents="none"
+          style={{
+            ...StyleSheet.absoluteFill,
+            zIndex: 999,
+            justifyContent: 'flex-end',
+            marginBottom: 15,
+            marginLeft: 15,
+          }}>
+          <Text>{packageJson.version}</Text>
+        </SafeAreaView>
       </SafeAreaView>
-    </>
+    </View>
   );
 };
 
