@@ -33,7 +33,7 @@ require('child_process').exec('git rev-parse HEAD', function(err, hash) {
         },
         () => {
           require('child_process').exec(
-            `git add . && git commit -m "${pack.version}" && git push origin`,
+            `git add . && git commit -m "increased build number ${pack.version}" && git push origin`,
           );
         },
       );
